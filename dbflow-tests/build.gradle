@@ -20,7 +20,7 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     lintOptions {
@@ -47,7 +47,7 @@ dependencies {
 
     kapt project("${dbflow_project_prefix}dbflow-processor")
     implementation project(':dbflow')
-    implementation 'com.android.support:appcompat-v7:26.0.1'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation project("${dbflow_project_prefix}dbflow")
     implementation project("${dbflow_project_prefix}dbflow-sqlcipher")
     implementation project("${dbflow_project_prefix}dbflow-kotlinextensions")
@@ -69,10 +69,10 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:2.8.9'
 
     androidTestImplementation 'junit:junit:4.12'
-    androidTestImplementation('com.android.support.test:runner:0.5') {
+    androidTestImplementation('androidx.test.ext:junit:1.1.1') {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
-    androidTestImplementation('com.android.support.test:rules:0.5') {
+    androidTestImplementation('androidx.test:rules:1.1.1') {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
     androidTestImplementation 'org.awaitility:awaitility:3.0.0-rc1'
